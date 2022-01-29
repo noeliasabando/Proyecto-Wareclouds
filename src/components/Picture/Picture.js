@@ -1,15 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Row, Col, Button } from "antd";
+import Video from "../Video/Video";
 import "./Picture.scss";
 
 const Picture = ({ data }) => {
   return (
     <Row>
       <Col span={6}>
-        <div className="picture__containerImg">
-          <img className="picture__img" src={data.url} alt="imagen" />
-          <div className="picture__detail">
+        <div>
+          {data.media_type === "img" ? (
+            <img src={data.url} alt="imagen" />
+          ) : (
+            <Video url={data.url} />
+          )}
+
+          <div>
             <Link to="detail">
               <Button
                 style={{
@@ -24,8 +30,8 @@ const Picture = ({ data }) => {
             </Link>
           </div>
         </div>
-        <div className="picture__name">{data.title}</div>
-        <div className="picture__info">{data.date}</div>
+        <div>Nombre: {data.title}</div>
+        <div>Fechass: {data.date}</div>
       </Col>
     </Row>
   );
