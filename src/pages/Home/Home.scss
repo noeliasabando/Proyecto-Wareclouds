@@ -1,0 +1,17 @@
+.home {
+  flex-grow: 1;
+  background-color: #ebebeb;
+  &__picker {
+    width: 20rem;
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  &__containerDates {
+    margin-top: 30px !important;
+  }
+  &__switch {
+    margin: 4px 10px;
+  }
+}
