@@ -5,7 +5,7 @@ import "./Video.scss";
 const Video = ({ url }) => (
   <div className="video">
     <iframe
-      width="352"
+      width="90%"
       height="400"
       src={url}
       frameBorder="0"
