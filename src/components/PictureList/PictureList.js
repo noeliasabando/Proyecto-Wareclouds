@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { Row, Col, Button } from "antd";
 import DetailModal from "../DetailModal/DetailModal";
 import Video from "../Video/Video";
@@ -7,6 +8,7 @@ import "./PictureList.scss";
 const PictureList = ({ data }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedElement, setSelectedElement] = useState();
+
   const showModal = (element) => {
     setSelectedElement(element);
     setIsModalVisible(true);
@@ -64,6 +66,10 @@ const PictureList = ({ data }) => {
         ))}
     </Row>
   );
+};
+
+PictureList.propTypes = {
+  data: PropTypes.array,
 };
 
 export default PictureList;

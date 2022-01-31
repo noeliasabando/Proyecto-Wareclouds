@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { Row, Col, Button } from "antd";
 import Video from "../Video/Video";
 import DetailModal from "../DetailModal/DetailModal";
@@ -10,19 +11,16 @@ const Picture = ({ data }) => {
     setIsModalVisible(true);
   };
 
-  const handleOk = () => {
+  const closeModal = () => {
     setIsModalVisible(false);
   };
 
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
   return (
     <Row className="picture" justify="center">
       <DetailModal
         visible={isModalVisible}
-        onOk={handleOk}
-        onCancel={handleCancel}
+        onOk={closeModal}
+        onCancel={closeModal}
         data={data}
       />
       <Col xs={22} sm={12} md={9} lg={6} className="picture__card">
@@ -52,6 +50,10 @@ const Picture = ({ data }) => {
       </Col>
     </Row>
   );
+};
+
+Picture.propTypes = {
+  data: PropTypes.object,
 };
 
 export default Picture;
