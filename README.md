@@ -8,3 +8,7 @@
 1) Instalar paquetes de node con `npm install`
 2) Levantar servidor con `npm start`
 2) Dirigirse a [enlace](http://localhost:3000/)
+
+## Visualización de videos
+
+Para visualización de videos, utilicé librería react-youtube
